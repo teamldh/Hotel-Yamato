@@ -20,8 +20,9 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal"); // -1, 0, 1
-        movement.y = Input.GetAxisRaw("Vertical"); // -1, 0, 1
+        // movement.x = Input.GetAxisRaw("Horizontal"); // -1, 0, 1
+        // movement.y = Input.GetAxisRaw("Vertical"); // -1, 0, 1
+        movement = PlayerControllerInputSystem.instance.GetMoveInput().normalized;
         if (Input.GetKeyDown(KeyCode.E))
         {
             PlayerInteract.interact(movement);
