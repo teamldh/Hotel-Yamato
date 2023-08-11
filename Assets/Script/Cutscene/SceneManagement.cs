@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagement : MonoBehaviour
 {
+    public string sceneName;
     private void OnEnable() {
-        SceneManager.LoadScene("Lapangan", LoadSceneMode.Single);
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 }

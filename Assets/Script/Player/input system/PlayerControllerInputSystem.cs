@@ -14,6 +14,7 @@ public class PlayerControllerInputSystem : MonoBehaviour
     
     //Variable used in this script
     Vector2 moveInput;
+    Vector2 PointerInput;
     bool attackInput;
     bool interactInput;
     bool submitInput;
@@ -36,6 +37,11 @@ public class PlayerControllerInputSystem : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context) {
         moveInput = context.ReadValue<Vector2>();
         //Debug.Log(moveInput);
+    }
+
+    public void OnPointer(InputAction.CallbackContext context){
+        PointerInput = context.ReadValue<Vector2>();
+        //Debug.Log(PointerInput);
     }
 
     public void OnAttack(InputAction.CallbackContext context) {

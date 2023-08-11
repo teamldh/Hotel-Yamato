@@ -5624,6 +5624,8 @@ PlayableDirector:
     value: {fileID: 860699678}
   - key: {fileID: 7287470331079137884, guid: 0875f4345c506b345bfa951bcafe6176, type: 2}
     value: {fileID: 483810573}
+  - key: {fileID: -8419320542822548120, guid: 0875f4345c506b345bfa951bcafe6176, type: 2}
+    value: {fileID: 2051172278}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1400081403
@@ -28127,6 +28129,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &2051172278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2051172280}
+  - component: {fileID: 2051172279}
+  m_Layer: 0
+  m_Name: loadScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &2051172279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051172278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157ad03e83ab12244bc0ef073fd47c66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Kantor
+--- !u!4 &2051172280
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2051172278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.5524397, y: 1.1072655, z: -0.018564966}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -28138,3 +28185,4 @@ SceneRoots:
   - {fileID: 1841690684}
   - {fileID: 935062177}
   - {fileID: 1483632576}
+  - {fileID: 2051172280}
