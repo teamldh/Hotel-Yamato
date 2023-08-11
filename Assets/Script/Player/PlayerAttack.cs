@@ -4,16 +4,38 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    // public Vector2 PointerPosition { get; private set; }
+    public GameObject weapon;
+    public Transform attackPoint;
+    public float attackRange;
+    public LayerMask enemyLayers;
+    public Animator anim;
 
-    // private void Update() {
-    //     transform.position = (PointerPosition - (Vector2)transform.position).normalized;;
-    // }
-
-    // private void Attack(){
-    //     bool attack = PlayerController.Instance.Attack;
-    // }
     private void Update() {
-        
+
+        if(PlayerControllerInputSystem.GetInstance().GetAttackInput()){
+            Attack();
+        }
+    }
+
+    private void Attack(){
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 aimDir = mousePosition - transform.position;
+        aimDir.z = 0f;
+        float angle = Mathf.Atan2(aimDir.y, aimDir.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        weapon.transform.rotation = rotation;
+        anim.SetTrigger("attack");
+    }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+    public void AttackEvent(){
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+        foreach(Collider2D enemy in hitEnemies){
+            enemy.GetComponent<healthSystem>().TakeDamage(10);
+        }
     }
 }
