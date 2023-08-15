@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -15,13 +16,21 @@ public class DialogueManager : MonoBehaviour
 
     [Header("Dialogue Choice UI")]
     [SerializeField] private GameObject[] choices;
+
+    [Header("Load Globals JSON")]
+    // For load and save variables on ink
+    [SerializeField] private TextAsset loadGlobalsJSON;
+
+    [Header("Typing Speed")]
+    [SerializeField] private float typingSpeed;
     
     private TextMeshProUGUI[] choicesText;
     private Story currentStory;
-    private bool dialogIsPlaying;
+    public bool dialogueIsPlaying { get; private set; }
     private Coroutine displayLineCoroutine;
 
     private bool canContinueToNextLine = false;
+    private bool hasChosenChoice = false;
     private static DialogueManager instance;
 
     private const string SPEAKER_TAG = "speaker";
@@ -29,12 +38,23 @@ public class DialogueManager : MonoBehaviour
     private const string LAYOUT_TAG = "layout";
     private const string AUDIO_TAG = "audio";
 
+    private DialogueVariables dialogueVariables;
+    private InkExternalFunctions inkExternalFunctions;
+
+    public event Action OnDialogueStarted;
+    public event Action OnDialogueLineDisplay;
+    public event Action OnDialogueEnded;
+
+    private Dictionary<string, Action<string>> externalFunctions = new Dictionary<string, Action<string>>();
     
     private void Awake() {
         if(instance != null){
             Debug.LogError("Found more than one Input Manager in the scene.");
         }
         instance = this;
+
+        dialogueVariables = new DialogueVariables(loadGlobalsJSON);
+        inkExternalFunctions = new InkExternalFunctions();
     }
 
     public static DialogueManager GetInstance() 
@@ -47,7 +67,7 @@ public class DialogueManager : MonoBehaviour
         //Awal script jalan (game awal mulai)
         dialoguePanel.SetActive(false);
         continueIcon.SetActive(false);
-        dialogIsPlaying = false;
+        dialogueIsPlaying = false;
 
         // get all of the choices text (mengambil semua text choice)
         choicesText = new TextMeshProUGUI[choices.Length];
@@ -60,7 +80,7 @@ public class DialogueManager : MonoBehaviour
     }
     
     private void Update() {
-        if(!dialogIsPlaying){
+        if(!dialogueIsPlaying){
             return;
         }
 
@@ -72,54 +92,191 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON){
-        currentStory = new Story(inkJSON.text);
-        dialogIsPlaying = true;
-        dialoguePanel.SetActive(true);
-        continueIcon.SetActive(true);
-
-        continueStory();
+    public DialogueManager EnterDialogueMode(TextAsset inkJSON){
+        if(dialogueIsPlaying || inkJSON == null)
+        {
+            Debug.LogWarning("Dialogue is already playing or inkJSON is null");
+            return null;
+        }
 
         PlayerControllerInputSystem.GetInstance().SetEnableInputUI(true);
         PlayerControllerInputSystem.GetInstance().SetEnableInputMovement(false);
+
+        currentStory = new Story(inkJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        continueIcon.SetActive(true);
+
+        dialogueVariables.StartListening(currentStory);
+        // if(emoteAnimator != null)
+        // {
+        //     inkExternalFunctions.Bind(currentStory, emoteAnimator);
+        // }
+        foreach(var externalFunction in externalFunctions)
+        {
+            currentStory.BindExternalFunction(externalFunction.Key, externalFunction.Value);
+        }
+
+        // reset portrait, layout, and speaker as default
+        displayNameText.text = "???";
+
+        //OnDialogueStarted?.Invoke();
+        continueStory();
+
+        return instance;
+    }
+
+    public DialogueManager EnterDialogueModeManually(TextAsset inkJSON){
+        if(dialogueIsPlaying || inkJSON == null)
+        {
+            Debug.LogWarning("Dialogue is already playing or inkJSON is null");
+            return null;
+        }
+
+        PlayerControllerInputSystem.GetInstance().SetEnableInputUI(true);
+        PlayerControllerInputSystem.GetInstance().SetEnableInputMovement(false);
+
+        currentStory = new Story(inkJSON.text);
+        dialogueIsPlaying = true;
+        dialoguePanel.SetActive(true);
+        continueIcon.SetActive(true);
+
+        dialogueVariables.StartListening(currentStory);
+        // if(emoteAnimator != null)
+        // {
+        //     inkExternalFunctions.Bind(currentStory, emoteAnimator);
+        // }
+        foreach(var externalFunction in externalFunctions)
+        {
+            currentStory.BindExternalFunction(externalFunction.Key, externalFunction.Value);
+        }
+
+        // reset portrait, layout, and speaker as default
+        displayNameText.text = "???";
+
+        //OnDialogueStarted?.Invoke();
+        continueStory();
+
+        return instance;
+    }
+
+    /// <summary>
+    /// Explicitly call this function to start the dialogue after calling EnterDialogueModeManually<br />
+    /// (Example: DialogueManager.GetInstance().EnterDialogueModeManually(inkJSON).StartDialogue();<br />
+    /// </summary>
+    /// <returns></returns>
+    public DialogueManager StartDialogue()
+    {
+        if(currentStory == null)
+        {
+            Debug.LogWarning("Cannot start dialogue because currentStory is null");
+            return null;
+        }
+        continueStory();
+        return instance;
+    }
+
+    /// <summary>
+    /// Register external function to be used in ink
+    /// Call this function before calling EnterDialogueMode
+    /// </summary>
+    /// <returns>Chainable DialogueManager</returns>
+    public DialogueManager BindExternalFunction(string functionName, Action<string> function)
+    {
+        if(function != null)
+        {
+            externalFunctions.Add(functionName, function);
+        }
+        return instance;
+    }
+
+    public DialogueManager OnDialogueDone(Action<DialogueVariables> callback)
+    {
+        if(callback != null)
+        {
+            OnDialogueEnded += () => callback(dialogueVariables);
+        }
+        return instance;
     }
 
     private void continueStory(){
-        if(currentStory.canContinue){
-
-            if (displayLineCoroutine != null){
+        if (currentStory.canContinue) 
+        {
+            // set text for the current dialogue line
+            if (displayLineCoroutine != null) 
+            {
                 StopCoroutine(displayLineCoroutine);
             }
-            //dialogueText.text = currentStory.Continue();
-            displayLineCoroutine = StartCoroutine(DisplayLine(currentStory.Continue()));
-
-            HandleTags(currentStory.currentTags);     
+            string nextLine = currentStory.Continue();
+            // handle case where the last line is an external function
+            if (nextLine.Equals("") && !currentStory.canContinue)
+            {
+                StartCoroutine(ExitDialogueMode());
+            }
+            // otherwise, handle the normal case for continuing the story
+            else 
+            {
+                // handle tags
+                HandleTags(currentStory.currentTags);
+                displayLineCoroutine = StartCoroutine(DisplayLine(nextLine));
+            }
         }
-        else{
-            ExitDialogueMode();
+        else 
+        {
+            StartCoroutine(ExitDialogueMode());
         }
     }
 
     private IEnumerator DisplayLine(string line){
-        dialogueText.text = "";
-
+        // set the text to the full line, but set the visible characters to 0
+        dialogueText.text = line;
+        OnDialogueLineDisplay?.Invoke();
+        dialogueText.maxVisibleCharacters = 0;
+        // hide items while text is typing
         continueIcon.SetActive(false);
         HideChoice();
+
         canContinueToNextLine = false;
 
-        foreach(char letter in line.ToCharArray()){
+        bool isAddingRichTextTag = false;
 
-            if(PlayerControllerInputSystem.GetInstance().GetSubmitPress()){
-                dialogueText.text = line;
+        // display each letter one at a time
+        foreach (char letter in line.ToCharArray())
+        {
+            // if the submit button is pressed, finish up displaying the line right away
+            if (PlayerControllerInputSystem.GetInstance().GetSubmitPress()) 
+            {
+                if(hasChosenChoice)
+                {
+                    hasChosenChoice = false;
+                    continue;
+                }
+                dialogueText.maxVisibleCharacters = line.Length;
                 break;
             }
 
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(0.04f);
+            // check for rich text tag, if found, add it without waiting
+            if (letter == '<' || isAddingRichTextTag) 
+            {
+                isAddingRichTextTag = true;
+                if (letter == '>')
+                {
+                    isAddingRichTextTag = false;
+                }
+            }
+            // if not rich text, add the next letter and wait a small time
+            else 
+            {
+                //PlayDialogueSound(dialogueText.maxVisibleCharacters, dialogueText.text[dialogueText.maxVisibleCharacters]);
+                dialogueText.maxVisibleCharacters++;
+                yield return new WaitForSecondsRealtime(typingSpeed);
+            }
         }
 
+        // actions to take after the entire line has finished displaying
         continueIcon.SetActive(true);
         DisplayChoices();
+
         canContinueToNextLine = true;
     }
 
@@ -208,11 +365,31 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void ExitDialogueMode(){
+    private IEnumerator ExitDialogueMode(){
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        dialogueVariables.StopListening(currentStory);
+        inkExternalFunctions.Unbind(currentStory);
+
+        foreach(var externalFunction in externalFunctions)
+        {
+            if(currentStory.TryGetExternalFunction(externalFunction.Key, out var ext))
+            {
+                currentStory.UnbindExternalFunction(externalFunction.Key);
+            }
+        }
+        externalFunctions.Clear();
+
+        dialogueIsPlaying = false;
+        dialoguePanel.SetActive(false);
+        dialogueText.text = "";
+
         dialoguePanel.SetActive(false);
         continueIcon.SetActive(false);
-        dialogIsPlaying = false;
+        dialogueIsPlaying = false;
         dialogueText.text = "";
+
+        OnDialogueEnded?.Invoke();
 
         PlayerControllerInputSystem.GetInstance().SetEnableInputUI(false);
         PlayerControllerInputSystem.GetInstance().SetEnableInputMovement(true);
@@ -222,28 +399,36 @@ public class DialogueManager : MonoBehaviour
     {
         List<Choice> currentChoices = currentStory.currentChoices;
 
-        // defensive check to make sure our UI can support the number of choices coming in
-        if (currentChoices.Count > choices.Length)
-        {
-            Debug.LogError("More choices were given than the UI can support. Number of choices given: " 
-                + currentChoices.Count);
-        }
+            // defensive check to make sure our UI can support the number of choices coming in
+            if (currentChoices.Count > choices.Length)
+            {
+                Debug.LogError("More choices were given than the UI can support. Number of choices given: " 
+                    + currentChoices.Count);
+            }
+            else if (currentChoices.Count > 0) 
+            {
+                continueIcon.SetActive(false);
+            }
 
-        int index = 0;
-        // enable and initialize the choices up to the amount of choices for this line of dialogue
-        foreach(Choice choice in currentChoices) 
-        {
-            choices[index].gameObject.SetActive(true);
-            choicesText[index].text = choice.text;
-            index++;
-        }
-        // go through the remaining choices the UI supports and make sure they're hidden
-        for (int i = index; i < choices.Length; i++) 
-        {
-            choices[i].gameObject.SetActive(false);
-        }
+            int index = 0;
+            // enable and initialize the choices up to the amount of choices for this line of dialogue
+            foreach(Choice choice in currentChoices) 
+            {
+                choices[index].gameObject.SetActive(true);
+                choicesText[index].text = choice.text;
+                // Rescale width to fit the text
+                //choices[index].GetComponent<RectTransform>().sizeDelta = new Vector2(choicesText[index].preferredWidth + 100, choices[index].GetComponent<RectTransform>().sizeDelta.y);
 
-        StartCoroutine(SelectFirstChoice());
+                index++;
+            }
+            // go through the remaining choices the UI supports and make sure they're hidden
+            for (int i = index; i < choices.Length; i++) 
+            {
+                choices[i].gameObject.SetActive(false);
+            }
+
+            EventSystem.current.SetSelectedGameObject(null);
+            //StartCoroutine(SelectFirstChoice());
     }
 
     private IEnumerator SelectFirstChoice() 
@@ -255,13 +440,53 @@ public class DialogueManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
     }
 
-    public void MakeChoice(int choiceindex) 
+    public void MakeChoice(int choiceIndex) 
     {
-        if(canContinueToNextLine){
-            currentStory.ChooseChoiceIndex(choiceindex);
-            PlayerControllerInputSystem.GetInstance().RegisterSubmitPressed();
+        Debug.Log("Choice made: " + choiceIndex);
+        if (canContinueToNextLine) 
+        {
+            currentStory.ChooseChoiceIndex(choiceIndex);
+            // NOTE: The below two lines were added to fix a bug after the Youtube video was made
+            PlayerControllerInputSystem.GetInstance().RegisterSubmitPressed(); // this is specific to my InputManager script
+            hasChosenChoice = true;
             continueStory();
         }
+    }
+
+    /// <summary>
+    /// Get the current state of a variable in ink<br/>
+    /// Useful for checking a variable before preparing for dialogue
+    /// </summary>
+    /// <param name="variableName">The name of the variable to get</param>
+    /// <returns>A variable from ink story. <br/>
+    /// To compare the value, use ToInt(), ToFloat(), ToString(), or ToBool() <br/>
+    /// </returns>
+    public Ink.Runtime.Object GetVariableState(string variableName) 
+    {
+        Ink.Runtime.Object variableValue = null;
+        dialogueVariables.variables.TryGetValue(variableName, out variableValue);
+        if (variableValue == null) 
+        {
+            Debug.LogWarning("Ink Variable was found to be null: " + variableName);
+        }
+        return variableValue;
+    }
+
+    /// <summary>
+    /// Set the a variable state of a variable in ink <br />
+    /// Usage: GetInstance().SetVariableState()["variableName"] = value;
+    /// </summary>
+    /// <returns>VariableState, This function cant be chained</returns>
+    public VariablesState SetVariableState() 
+    {
+        return currentStory.state.variablesState;
+    }
+
+    // This method will get called anytime the application exits.
+    // Depending on your game, you may want to save variable state in other places.
+    public void OnApplicationQuit() 
+    {
+        dialogueVariables.SaveVariables();
     }
 
 }

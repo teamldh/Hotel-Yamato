@@ -17,8 +17,8 @@ public class PlayerInteract : MonoBehaviour
 
         if(objectInteract != null && PlayerControllerInputSystem.GetInstance().GetInteractInput()){
             if(objectInteract.GetComponent<interactable>() != null){
-                objectInteract.GetComponent<interactable>().interact();
                 HideHint();
+                objectInteract.GetComponent<interactable>().interact();
             }
             
             
@@ -53,7 +53,7 @@ public class PlayerInteract : MonoBehaviour
         if(closestObject != null){
             if(indicatorObject == null || closestObject != objectInteract && hintPrefab != null){
                 HideHint();
-                indicatorObject = Instantiate(hintPrefab, closestObject.transform.position + Vector3.up * 1f, Quaternion.identity);
+                indicatorObject = Instantiate(hintPrefab, closestObject.transform.position + Vector3.up * 1.5f, Quaternion.identity);
             }
         }
 

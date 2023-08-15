@@ -1,0 +1,360 @@
+fileFormatVersion: 2
+guid: 38966156dedb5e54d9e627c246d5b91d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: middle_age_b_woman_down_idle_Frame_0
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 164
+      height: 147
+    spriteID: af3f6f4abf2a6f0479b05b498b5f0de0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: middle_age_b_woman_down_idle_Frame_1
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 159
+      width: 164
+      height: 147
+    spriteID: 47380a77ea7183e47b428877de701260
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 159}
+  - name: middle_age_b_woman_down_idle_Frame_2
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 314
+      width: 164
+      height: 147
+    spriteID: e85f063db157a674692dbc7d99fc8640
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 314}
+  - name: middle_age_b_woman_down_idle_Frame_3
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 469
+      width: 164
+      height: 147
+    spriteID: 4b09d2e1cc40aec458ea97de5a5fbf66
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 469}
+  - name: middle_age_b_woman_down_idle_Frame_4
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 624
+      width: 164
+      height: 147
+    spriteID: 5d9e674b03996734bbf7145e23545fac
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 624}
+  - name: middle_age_b_woman_down_idle_Frame_5
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 779
+      width: 164
+      height: 147
+    spriteID: 6a87c539fee358c42bcc6028a969d575
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 779}
+  - name: middle_age_b_woman_down_idle_Frame_6
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 4
+      width: 164
+      height: 147
+    spriteID: c9b62957ca25f4b41834f1d750e77305
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 176, y: 4}
+  - name: middle_age_b_woman_down_idle_Frame_7
+    originalName: 
+    pivot: {x: 0.12195122, y: 0.45578232}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 176
+      y: 159
+      width: 164
+      height: 147
+    spriteID: aa160691bd99b4f4bbf7a0762061b478
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 176, y: 159}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 474431099
+    name: middle_age_b_woman_down_idle
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: middle_age_b_woman_down_idle_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: af3f6f4abf2a6f0479b05b498b5f0de0
+    - name: middle_age_b_woman_down_idle_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: 47380a77ea7183e47b428877de701260
+    - name: middle_age_b_woman_down_idle_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: e85f063db157a674692dbc7d99fc8640
+    - name: middle_age_b_woman_down_idle_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: 4b09d2e1cc40aec458ea97de5a5fbf66
+    - name: middle_age_b_woman_down_idle_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: 5d9e674b03996734bbf7145e23545fac
+    - name: middle_age_b_woman_down_idle_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: 6a87c539fee358c42bcc6028a969d575
+    - name: middle_age_b_woman_down_idle_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: c9b62957ca25f4b41834f1d750e77305
+    - name: middle_age_b_woman_down_idle_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 0
+        y: -67
+        width: 164
+        height: 147
+      spriteId: aa160691bd99b4f4bbf7a0762061b478
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 40, y: 80}
