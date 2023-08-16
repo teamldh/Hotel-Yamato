@@ -1,4 +1,4 @@
-INCLUDE ../Global Asset.ink
+INCLUDE ../../Global Asset.ink
 
 EXTERNAL PindahScene(sceneName)
 Kau mau keluar ??? #speaker: Narator

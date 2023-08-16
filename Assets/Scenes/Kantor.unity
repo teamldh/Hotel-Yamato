@@ -534,8 +534,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0066611767, y: -0.4196267}
-  m_Size: {x: 0.8268199, y: 0.9476023}
+  m_Offset: {x: 0.001702974, y: -0.05487511}
+  m_Size: {x: 0.12020963, y: 0.506831}
   m_Direction: 0
 --- !u!212 &462963961
 SpriteRenderer:
@@ -578,7 +578,7 @@ SpriteRenderer:
   m_SortingLayerID: 1964179755
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 173559840, guid: d57f5601290cdb74cae6571dc37dfb5a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -598,8 +598,8 @@ Transform:
   m_GameObject: {fileID: 462963959}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.88, y: -4.78, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.875, y: -4.462, z: 0}
+  m_LocalScale: {x: 4.2615, y: 4.2615, z: 4.2615}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2603,8 +2603,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0066611767, y: -0.4196267}
-  m_Size: {x: 0.8268199, y: 0.9476023}
+  m_Offset: {x: -0.0025618179, y: -0.06301205}
+  m_Size: {x: 0.14534073, y: 0.55878836}
   m_Direction: 0
 --- !u!212 &1080026201
 SpriteRenderer:
@@ -2647,7 +2647,7 @@ SpriteRenderer:
   m_SortingLayerID: 1964179755
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: -326758626, guid: fc80002f9021c3c49921ec509321a462, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2667,8 +2667,8 @@ Transform:
   m_GameObject: {fileID: 1080026199}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.13, y: 9.23, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.242, y: 9.446, z: 0}
+  m_LocalScale: {x: 4.2615, y: 4.2615, z: 4.2615}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2685,7 +2685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c929058fb231a408bc0424af314bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkJSON: {fileID: 4900000, guid: 7d27de6dd7ba8f240bec6a34854803b9, type: 3}
+  inkJSON: {fileID: 4900000, guid: 3e6d88709f8fa174a9f948759e3d277f, type: 3}
 --- !u!1 &1095846336
 GameObject:
   m_ObjectHideFlags: 0
@@ -6467,7 +6467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1485908363
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14640,7 +14640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1507961434816720350, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: orthographic size
-      value: 6.21875
+      value: 6.75
       objectReference: {fileID: 0}
     - target: {fileID: 1507961434816720350, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_BackGroundColor.b

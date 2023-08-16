@@ -1,4 +1,4 @@
-INCLUDE ../Global Asset.ink
+INCLUDE ../../Global Asset.ink
 
 ->main
 

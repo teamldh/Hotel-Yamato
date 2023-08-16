@@ -19,11 +19,11 @@ public class Object_interact : MonoBehaviour, interactable
         //     IsInteractable = false;
         // });
 
-        DialogueManager.GetInstance().EnterDialogueMode(inkJSON)
-        .OnDialogueDone((variable) => 
-        {
-            // You can do something here when the dialogue is done
-        });
+        DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+        // .OnDialogueDone((variable) => 
+        // {
+        //     // You can do something here when the dialogue is done
+        // });
     }
 
     public void PindahScene(string sceneName)
