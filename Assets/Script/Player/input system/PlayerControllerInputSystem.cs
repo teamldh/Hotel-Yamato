@@ -18,6 +18,8 @@ public class PlayerControllerInputSystem : MonoBehaviour
     bool attackInput;
     bool interactInput;
     bool submitInput;
+    bool pauseInput;
+    bool resumeInput;
 
     private void Awake() {
         if(instance != null){
@@ -59,6 +61,16 @@ public class PlayerControllerInputSystem : MonoBehaviour
         //Debug.Log(submitInput);
     }
 
+    public void OnPause(InputAction.CallbackContext context){
+        pauseInput = context.performed;
+        //Debug.Log(pauseInput);
+    }
+
+    public void OnResume(InputAction.CallbackContext context){
+        resumeInput = context.performed;
+        //Debug.Log(resumeInput);
+    }
+
     //holdable button
     public Vector2 GetMoveInput() {
         return moveInput;
@@ -80,6 +92,18 @@ public class PlayerControllerInputSystem : MonoBehaviour
     public bool GetSubmitPress(){
         bool temp = submitInput;
         submitInput = false;
+        return temp;
+    }
+
+    public bool GetPauseInput(){
+        bool temp = pauseInput;
+        pauseInput = false;
+        return temp;
+    }
+
+    public bool GetResumeInput(){
+        bool temp = resumeInput;
+        resumeInput = false;
         return temp;
     }
 

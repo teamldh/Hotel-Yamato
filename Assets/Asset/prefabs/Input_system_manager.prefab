@@ -138,6 +138,38 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 1d617b56-488a-4455-8b7c-405801d9cfa9
     m_ActionName: PlayerController/PointerPosition[/Mouse/position]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1743934587129783434}
+        m_TargetAssemblyTypeName: PlayerControllerInputSystem, Assembly-CSharp
+        m_MethodName: OnPause
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ef73091d-d02b-4abc-a86a-a8b723577a6f
+    m_ActionName: PlayerController/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1743934587129783434}
+        m_TargetAssemblyTypeName: PlayerControllerInputSystem, Assembly-CSharp
+        m_MethodName: OnResume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: dc943534-c510-48c1-a592-792efc6ba915
+    m_ActionName: UI/ResumeGame[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: PlayerController

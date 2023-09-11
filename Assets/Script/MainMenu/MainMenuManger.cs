@@ -13,6 +13,7 @@ public class MainMenuManger : MonoBehaviour
     public GameObject aboutButton;
     public GameObject exitButton;
     public GameObject backButton;
+    public Button continueButton;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +24,37 @@ public class MainMenuManger : MonoBehaviour
         aboutButton.SetActive(true);
         exitButton.SetActive(true);
         backButton.SetActive(false);
+
+        GameData data = SaveManager.instance.LoadSceneData();
+        if (data != null)
+        {
+            continueButton.interactable = true;
+        }
+        else
+        {
+            continueButton.interactable = false;
+        }
     }
 
-    public void loadScene(string sceneName){
-        SceneManager.LoadScene(sceneName);
+    public void playGame(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void continueGame(){
+        LoadSceneData();
+    }
+
+    private void LoadSceneData()
+    {
+        GameData data = SaveManager.instance.LoadSceneData();
+        if (data != null)
+        {
+            SceneManager.LoadScene(data.sceneName);
+        }
+        else
+        {
+            Debug.LogWarning("No save data found.");
+        }
     }
 
     public void aboutMenu(){

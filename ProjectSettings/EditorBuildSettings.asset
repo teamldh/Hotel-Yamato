@@ -27,10 +27,16 @@ EditorBuildSettings:
     path: Assets/Scenes/RoofHotelYamato.unity
     guid: c5ba999302fdfb84bad28358f7a8bb42
   - enabled: 1
+    path: Assets/Scenes/OutdoorHotelYamato 1.unity
+    guid: d83e312fb1920c0478e546a494b0bae6
+  - enabled: 1
     path: Assets/Scenes/IndorHotelYamatoPerundingan.unity
     guid: 5f89742e61c858f479332a121850c3bd
   - enabled: 1
     path: Assets/Scenes/IndorHotelYamatoPertempuran.unity
     guid: 146985d0e259105478fc075fe0116e6f
+  - enabled: 1
+    path: Assets/Scenes/RoofHotelYamato_2.unity
+    guid: ce7b9ed14b6adc34db6cc60430570544
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 230741ee4d2544440b5f461acf35408b, type: 2}
