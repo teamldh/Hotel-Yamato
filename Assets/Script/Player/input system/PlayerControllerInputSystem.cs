@@ -75,14 +75,11 @@ public class PlayerControllerInputSystem : MonoBehaviour
     public Vector2 GetMoveInput() {
         return moveInput;
     }
-
-    //button pressed once
     public bool GetAttackInput() {
-        bool temp = attackInput;
-        attackInput = false;
-        return temp;
+        return attackInput;
     }
 
+    //button pressed once
     public bool GetInteractInput() {
         bool temp = interactInput;
         interactInput = false;

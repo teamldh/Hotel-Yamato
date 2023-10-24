@@ -113,12 +113,12 @@ TextureImporter:
       name: walking-side_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 300
+        width: 303
         height: 294
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -134,12 +134,12 @@ TextureImporter:
       name: walking-side_1
       rect:
         serializedVersion: 2
-        x: 301
+        x: 303
         y: 0
-        width: 300
+        width: 303
         height: 294
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,6 +147,384 @@ TextureImporter:
       bones: []
       spriteID: c13a02b637d6c214eb62822d7d38375c
       internalID: 1118416542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_2
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d185a42133c514da0b1990cf16835b
+      internalID: 1907435405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_3
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93e3b10aaed16894da70eed939a80531
+      internalID: 321370885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_4
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5702458e6140d5844b283b1c2ab1c1f7
+      internalID: -1657755935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_5
+      rect:
+        serializedVersion: 2
+        x: 1515
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80b07c81519c4514786e6d1df3f8c0de
+      internalID: -2125482503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_6
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa81f635859645343840909e6c86bdc4
+      internalID: -1061551045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_7
+      rect:
+        serializedVersion: 2
+        x: 2121
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b14051463bb4a114a85d43fed4d6cf64
+      internalID: -1720639437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_8
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87f5baef9ee5d44baa6308db4a3ee6d
+      internalID: 69680884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_9
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cf61fc25d84b5b4dafd42292bc530cd
+      internalID: -974505241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_10
+      rect:
+        serializedVersion: 2
+        x: 3030
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d19985579b6ae64bb19b8f4d324e1dc
+      internalID: -1616588021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_11
+      rect:
+        serializedVersion: 2
+        x: 3333
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598d37e596dd11e4ea67280ba41787e3
+      internalID: 1788880244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_12
+      rect:
+        serializedVersion: 2
+        x: 3636
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f3aae9eb71bac84f9b2db60ce863a3e
+      internalID: -1924882390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_13
+      rect:
+        serializedVersion: 2
+        x: 3939
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627cd52dd54b264459ac8cc8f71fa259
+      internalID: 2138266213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_14
+      rect:
+        serializedVersion: 2
+        x: 4242
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f426f9841f304146b0e44462f7a743b
+      internalID: 685241864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_15
+      rect:
+        serializedVersion: 2
+        x: 4545
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5113548828877164c9c2134edb0f13b2
+      internalID: 2126980818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_16
+      rect:
+        serializedVersion: 2
+        x: 4848
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd886d8abc673574d8cb126fe7a86291
+      internalID: -1129338677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_17
+      rect:
+        serializedVersion: 2
+        x: 5151
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c771f8530af7a64fa08d556ac912efe
+      internalID: -1591225142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_18
+      rect:
+        serializedVersion: 2
+        x: 5454
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 413934f5b80082b4289301f2f4990528
+      internalID: 247637890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: walking-side_19
+      rect:
+        serializedVersion: 2
+        x: 5757
+        y: 0
+        width: 303
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea7784edcc12c342bbd92ba6f71da6b
+      internalID: 1179453866
       vertices: []
       indices: 
       edges: []
@@ -164,6 +542,24 @@ TextureImporter:
     nameFileIdTable:
       walking-side_0: -494229123
       walking-side_1: 1118416542
+      walking-side_10: -1616588021
+      walking-side_11: 1788880244
+      walking-side_12: -1924882390
+      walking-side_13: 2138266213
+      walking-side_14: 685241864
+      walking-side_15: 2126980818
+      walking-side_16: -1129338677
+      walking-side_17: -1591225142
+      walking-side_18: 247637890
+      walking-side_19: 1179453866
+      walking-side_2: 1907435405
+      walking-side_3: 321370885
+      walking-side_4: -1657755935
+      walking-side_5: -2125482503
+      walking-side_6: -1061551045
+      walking-side_7: -1720639437
+      walking-side_8: 69680884
+      walking-side_9: -974505241
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

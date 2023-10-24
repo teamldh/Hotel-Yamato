@@ -19191,7 +19191,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1507961434816720350, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: orthographic size
-      value: 5.4479165
+      value: 7.25
       objectReference: {fileID: 0}
     - target: {fileID: 1507961434816720350, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -19207,11 +19207,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942264595855047830, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.187529
+      value: 17.523458
       objectReference: {fileID: 0}
     - target: {fileID: 7942264595855047830, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.26714993
+      value: -0.48312998
       objectReference: {fileID: 0}
     - target: {fileID: 7942264595855047830, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20846,6 +20846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+  sceneIndex: 0
   panelpause: {fileID: 93629341}
   panelSkip: {fileID: 1124923351}
   panelMainMenu: {fileID: 1086770665}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class healthSystem : MonoBehaviour
 {
-    public int maxHealth;
-    private int currentHealth;
+    public float maxHealth;
+    public float currentHealth {get; set;}
 
     // Start is called before the first frame update
     void Start()
@@ -13,10 +13,27 @@ public class healthSystem : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage){
+    public void TakeDamage(float damage){
         currentHealth -= damage;
         if(currentHealth <= 0){
-            Destroy(gameObject);
+            if(gameObject.tag == "Enemy"){
+                gameObject.GetComponent<enemy>().dropHealth();
+                //gameObject.GetComponent<countEnemyDead>().countEnemy++;
+                //GameObject.Find("NPC_hero").GetComponent<countEnemyDead>().countEnemy++;
+                Destroy(gameObject);
+            }
+            if(gameObject.tag == "Player"){
+                Debug.Log("Game Over");
+                GameObject.Find("manager").GetComponent<gameOver>().gameOverPanel();
+
+            }
+        }
+    }
+
+    public void Heal(float healAmount){
+        currentHealth += healAmount;
+        if(currentHealth > maxHealth){
+            currentHealth = maxHealth;
         }
     }
 }

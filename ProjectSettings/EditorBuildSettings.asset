@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Begining.unity
     guid: 3cfb53571393f7e4ca8a459eeefa075d
   - enabled: 1
-    path: Assets/Scenes/Lapangan.unity
-    guid: 5e22a33a16936244e98752c9dabf50a8
+    path: Assets/Scenes/Lapangan 1.unity
+    guid: f8b832e5b9a091f4491f7226c54da7cb
   - enabled: 1
     path: Assets/Scenes/Kantor.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02

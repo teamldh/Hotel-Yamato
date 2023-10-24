@@ -1177,6 +1177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: 
+  sceneIndex: 0
   panelpause: {fileID: 189192187}
   panelSkip: {fileID: 227161231}
   panelMainMenu: {fileID: 1841179223}
@@ -1984,7 +1985,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Lapangan
+          m_StringArgument: Lapangan 1
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &695952810
@@ -3119,7 +3120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157ad03e83ab12244bc0ef073fd47c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Lapangan
+  sceneName: Lapangan 1
 --- !u!1 &1273549365
 GameObject:
   m_ObjectHideFlags: 0
