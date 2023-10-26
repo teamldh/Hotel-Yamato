@@ -7,12 +7,9 @@ using TMPro;
 
 public class MainMenuManger : MonoBehaviour
 {
-    public login Login;
     [Header("Main Menu UI")]
     public GameObject mainMenuUI;
     public GameObject aboutMenuUI;
-    public GameObject LoginPanel;
-    public GameObject GuestPanel;
     public GameObject playButton;
     public GameObject aboutButton;
     public GameObject exitButton;
@@ -24,9 +21,6 @@ public class MainMenuManger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string guest = Login.generateGuest();
-        LoginPanel.SetActive(true);
-        GuestPanel.SetActive(false);
         Panelmainmenu();
 
         GameData data = SaveManager.instance.LoadSceneData();
@@ -38,14 +32,6 @@ public class MainMenuManger : MonoBehaviour
         {
             continueButton.interactable = false;
         }
-
-        Login.loginButton.onClick.AddListener(Login.Login);
-        Login.guest.onClick.AddListener(() => {
-            LoginPanel.SetActive(false);
-            GuestPanel.SetActive(true);
-            guestName1.text = "hello " + guest;
-            guestName2.text = "hello " + guest;
-        });
         
     }
 
@@ -71,8 +57,6 @@ public class MainMenuManger : MonoBehaviour
     }
 
     public void aboutMenu(){
-        LoginPanel.SetActive(false);
-        GuestPanel.SetActive(false);
         mainMenuUI.SetActive(false);
         aboutMenuUI.SetActive(true);
         playButton.SetActive(false);
@@ -87,20 +71,6 @@ public class MainMenuManger : MonoBehaviour
     }
 
     public void backMenu(){
-        LoginPanel.SetActive(false);
-        GuestPanel.SetActive(false);
-        Panelmainmenu();
-    }
-
-    public void Yes(){
-        LoginPanel.SetActive(false);
-        GuestPanel.SetActive(false);
-        Panelmainmenu();
-    }
-
-    public void No(){
-        LoginPanel.SetActive(true);
-        GuestPanel.SetActive(false);
         Panelmainmenu();
     }
 
