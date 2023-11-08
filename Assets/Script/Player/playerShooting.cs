@@ -25,5 +25,6 @@ public class playerShooting : MonoBehaviour
 
     private void Shoot(){
         Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        sfxManager.instance.weaponShot();
     }
 }

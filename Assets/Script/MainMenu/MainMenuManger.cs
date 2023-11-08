@@ -15,8 +15,6 @@ public class MainMenuManger : MonoBehaviour
     public GameObject exitButton;
     public GameObject backButton;
     public Button continueButton;
-    public TextMeshProUGUI guestName1;
-    public TextMeshProUGUI guestName2;
 
     // Start is called before the first frame update
     void Start()
@@ -36,10 +34,12 @@ public class MainMenuManger : MonoBehaviour
     }
 
     public void playGame(){
+        sfxManager.instance.sfx_2();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void continueGame(){
+        sfxManager.instance.sfx_3();
         LoadSceneData();
     }
 
@@ -57,6 +57,7 @@ public class MainMenuManger : MonoBehaviour
     }
 
     public void aboutMenu(){
+        sfxManager.instance.sfx_1();
         mainMenuUI.SetActive(false);
         aboutMenuUI.SetActive(true);
         playButton.SetActive(false);
@@ -66,15 +67,18 @@ public class MainMenuManger : MonoBehaviour
     }
 
     public void quitGame(){
+        sfxManager.instance.sfx_1();
         Application.Quit();
         Debug.Log("Quit");
     }
 
     public void backMenu(){
+        sfxManager.instance.sfx_1();
         Panelmainmenu();
     }
 
     private void Panelmainmenu(){
+        sfxManager.instance.sfx_1();
         mainMenuUI.SetActive(true);
         aboutMenuUI.SetActive(false);
         playButton.SetActive(true);

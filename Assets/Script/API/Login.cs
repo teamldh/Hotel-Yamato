@@ -21,12 +21,17 @@ public class Login : MonoBehaviour
 
     const string continueText = "\n(Press To Continue...)";
     private bool isLogged = false;
-    string loginTime;
+    [SerializeField]string loginTime;
 
     // private void Awake() 
     // {
     //     TryAutoLogin();
     // }
+
+    private void Start() 
+    {
+        checkedLogin();
+    }
 
     void OnApplicationQuit() 
     {    
@@ -34,6 +39,16 @@ public class Login : MonoBehaviour
         {
             //post game log when application is closed without logging out
             StartCoroutine(PostGameLog());
+        }
+    }
+
+    private void checkedLogin()
+    {
+        if(APIManager.Instance.account != null)
+        {
+            isLogged = true;
+            SwitchButton();
+            StartCoroutine(PostLoginRequest(AutoLoginRequest()));
         }
     }
 

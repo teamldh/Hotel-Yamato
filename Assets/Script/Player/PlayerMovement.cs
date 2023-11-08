@@ -17,5 +17,6 @@ public class PlayerMovement : MonoBehaviour
     public void Move(Vector2 movement)
     {
         rb.MovePosition(rb.position + movement * mvSpeed * Time.fixedDeltaTime);
+        sfxManager.instance.walking();
     }
 }
