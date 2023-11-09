@@ -25,6 +25,7 @@ public class PanelSkip : MonoBehaviour
         }
     }
     public void Pause(){
+        sfxManager.instance.sfx_1();
         panelpause.SetActive(true);
         Time.timeScale = 0f;
     }
@@ -32,13 +33,16 @@ public class PanelSkip : MonoBehaviour
     public void Resume(){
         Start();
         Time.timeScale = 1f;
+        sfxManager.instance.sfx_1();
     }
 
     public void Skip(){
+        sfxManager.instance.sfx_1();
         panelSkip.SetActive(true);
     }
 
     public void MainMenu(){
+        sfxManager.instance.sfx_1();
         panelMainMenu.SetActive(true);
     }
 

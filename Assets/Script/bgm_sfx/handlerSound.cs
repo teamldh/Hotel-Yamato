@@ -36,7 +36,10 @@ public class handlerSound : MonoBehaviour
             case "RoofHotelYamato":
                 bgmManager.instance.atapHotel();
                 break;
-            case "Pertempuran": 
+            case "IndorHotelYamatoPertempuran": 
+                bgmManager.instance.pertempuran();
+                break;
+            case "RoofHotelYamato2":
                 bgmManager.instance.pertempuran();
                 break;
         }

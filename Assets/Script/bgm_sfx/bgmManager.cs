@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class bgmManager : MonoBehaviour
 {
@@ -17,6 +18,26 @@ public class bgmManager : MonoBehaviour
             Destroy(gameObject);
         }
         audioSource = GetComponent<AudioSource>();
+    }
+
+    private void Update() {
+        switch(SceneManager.GetActiveScene().name){
+            case "Begining":
+                noBGM();
+                break;
+            case "Lapangan1":
+                noBGM();
+                break;
+            case "OutdoorHotelYamato":
+                noBGM();
+                break;
+            case "OutdoorHotelYamato1":
+                noBGM();
+                break;
+            case "IndorHotelYamatoPerundingan":
+                noBGM();
+                break;
+        }
     }
 
     public void main_menu(){
@@ -47,5 +68,9 @@ public class bgmManager : MonoBehaviour
         audioSource.clip = bgmClips[4];
         audioSource.loop = true;
         audioSource.Play();
+    }
+
+    public void noBGM(){
+        audioSource.Stop();
     }
 }

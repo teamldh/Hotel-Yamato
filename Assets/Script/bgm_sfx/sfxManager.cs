@@ -32,10 +32,6 @@ public class sfxManager : MonoBehaviour
         audioSource.PlayOneShot(sfxClips[2]);
     }
 
-    public void walking(){
-        audioSource.PlayOneShot(sfxClips[3]);
-    }
-
     public void weaponShot(){
         audioSource.PlayOneShot(sfxClips[4]);
     }

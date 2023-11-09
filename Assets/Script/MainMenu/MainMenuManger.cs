@@ -10,8 +10,10 @@ public class MainMenuManger : MonoBehaviour
     [Header("Main Menu UI")]
     public GameObject mainMenuUI;
     public GameObject aboutMenuUI;
+    public GameObject settingMenuUI;
     public GameObject playButton;
     public GameObject aboutButton;
+    public GameObject settingButton;
     public GameObject exitButton;
     public GameObject backButton;
     public Button continueButton;
@@ -64,6 +66,8 @@ public class MainMenuManger : MonoBehaviour
         aboutButton.SetActive(false);
         exitButton.SetActive(false);
         backButton.SetActive(true);
+        settingButton.SetActive(false);
+        settingMenuUI.SetActive(false);
     }
 
     public void quitGame(){
@@ -85,5 +89,19 @@ public class MainMenuManger : MonoBehaviour
         aboutButton.SetActive(true);
         exitButton.SetActive(true);
         backButton.SetActive(false);
+        settingButton.SetActive(true);
+        settingMenuUI.SetActive(false);
+    }
+
+    public void settingMenu(){
+        sfxManager.instance.sfx_1();
+        mainMenuUI.SetActive(false);
+        aboutMenuUI.SetActive(false);
+        playButton.SetActive(false);
+        aboutButton.SetActive(false);
+        exitButton.SetActive(false);
+        backButton.SetActive(true);
+        settingButton.SetActive(false);
+        settingMenuUI.SetActive(true);
     }
 }
