@@ -56,10 +56,12 @@ public class PauseManager : MonoBehaviour
     public void SettingPanel(){
         sfxManager.instance.sfx_1();
         settingPanel.SetActive(true);
+        pausePanel.SetActive(false);
     }
 
     public void SettingPanelClose(){
         sfxManager.instance.sfx_1();
         settingPanel.SetActive(false);
+        pausePanel.SetActive(true);
     }
 }
