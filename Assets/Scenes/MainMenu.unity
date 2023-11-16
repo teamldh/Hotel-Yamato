@@ -3084,6 +3084,7 @@ MonoBehaviour:
   nameAccount: {fileID: 111380985}
   statusText: {fileID: 1485270740}
   lanjutButton: {fileID: 1461697635}
+  alertStatus: {fileID: 602497872}
   loginTime: 
 --- !u!4 &873187192
 Transform:
@@ -6144,9 +6145,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1974788851}
-        m_TargetAssemblyTypeName: MainMenuManger, Assembly-CSharp
-        m_MethodName: quitGame
+      - m_Target: {fileID: 873187191}
+        m_TargetAssemblyTypeName: Login, Assembly-CSharp
+        m_MethodName: OnQuitGameButtonClicked
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

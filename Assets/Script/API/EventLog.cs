@@ -8,7 +8,7 @@ public class EventLog
     public int id_game;
     public int id_log;
     public int no_event;
-    public EventStatus status;
+    [Newtonsoft.Json.JsonProperty("status_event")] public EventStatus status;
 
 
     /// <summary>
