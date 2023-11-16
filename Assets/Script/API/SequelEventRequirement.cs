@@ -51,7 +51,7 @@ public class SequelEventRequirement : MonoBehaviour
             if(APIManager.Instance.account == null) return false;
             
             GameEvent gameEvent = new GameEvent(log.id_game, log.no_event);
-            if(APIManager.Instance.account.eventLogDict[gameEvent].status != log.status)
+            if(APIManager.Instance.account.CheckEventLog(gameEvent, log.status) == false)
             {
                 return false;
             }

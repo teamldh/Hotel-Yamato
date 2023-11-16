@@ -52,6 +52,18 @@ public class Account
             }
         }
     }
+
+    public bool CheckEventLog(GameEvent gameEvent, EventStatus status)
+    {
+        if(eventLogDict.ContainsKey(gameEvent))
+        {
+            return eventLogDict[gameEvent].status == status;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
 
 
