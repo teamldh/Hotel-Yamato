@@ -10015,6 +10015,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197514096}
   m_CullTransparentMesh: 1
+--- !u!1 &219468566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 219468568}
+  - component: {fileID: 219468567}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &219468567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219468566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc8473908141ce4d91e0e27b836e052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventLogs:
+  - id_game: 1
+    id_log: 0
+    no_event: 1
+    status: 2
+  - id_game: 1
+    id_log: 0
+    no_event: 2
+    status: 1
+  - id_game: 1
+    id_log: 0
+    no_event: 3
+    status: 0
+  - id_game: 1
+    id_log: 0
+    no_event: 4
+    status: 0
+--- !u!4 &219468568
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219468566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.123931, y: 4.0207987, z: -0.05344985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220827198
 GameObject:
   m_ObjectHideFlags: 0
@@ -19268,7 +19329,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1507961434816720350, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: orthographic size
-      value: 6.75
+      value: 6.03125
       objectReference: {fileID: 0}
     - target: {fileID: 7942264595855047830, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_LocalPosition.x
@@ -37916,3 +37977,4 @@ SceneRoots:
   - {fileID: 119824631}
   - {fileID: 2077825677}
   - {fileID: 1118543719}
+  - {fileID: 219468568}

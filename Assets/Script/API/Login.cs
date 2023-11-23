@@ -31,19 +31,19 @@ public class Login : MonoBehaviour
     //     TryAutoLogin();
     // }
 
-    private void Start() 
-    {
-        checkedLogin();
-    }
+    // private void Start() 
+    // {
+    //     checkedLogin();
+    // }
 
-    void OnApplicationQuit() 
-    {    
-        if(isLogged)
-        {
-            //post game log when application is closed without logging out
-            StartCoroutine(PostGameLog());
-        }
-    }
+    // void OnApplicationQuit() 
+    // {    
+    //     if(isLogged)
+    //     {
+    //         //post game log when application is closed without logging out
+    //         StartCoroutine(PostGameLog());
+    //     }
+    // }
 
     private void checkedLogin()
     {
@@ -169,7 +169,13 @@ public class Login : MonoBehaviour
             // //Convert JSON string to Account object
             Account account = new Account(loginPayload.data.id_player, loginPayload.data.username, loginPayload.data.nama_player);
             account.SetEventLog(loginCallback.playerprogression);
+
+            //account.SetEventLog(loginCallback.playerprogression);
             APIManager.Instance.SetAccount(account);
+            Debug.Log(account.id_player);
+            Debug.Log(account.username);
+            Debug.Log(account.nama_player);
+            Debug.Log(account.eventLogDict.Count);
 
             statusText.text = "Login success!";
             statusText.text += continueText;
@@ -222,6 +228,7 @@ public class Login : MonoBehaviour
     /// <returns></returns>
     private IEnumerator PostGameLog()
     {
+        EventLog[] arrEvent = APIManager.Instance.account.getValueFromDict();
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
         formData.Add(new MultipartFormDataSection("id_game", APIManager.ID_GAME.ToString()));
         formData.Add(new MultipartFormDataSection("id_player", APIManager.Instance.account.id_player));
@@ -244,8 +251,7 @@ public class Login : MonoBehaviour
             Debug.Log("Game log posted! ID: " + gameLog.id_log);
 
             // Post the game event log to the server
-            
-            //StartCoroutine(GameEventLogRequest(QuestManager.Instance.GetQuestEventsLog(), gameLog.id_log));
+            StartCoroutine(GameEventLogRequest(arrEvent, gameLog.id_log));
         }
         else
         {
@@ -273,25 +279,40 @@ public class Login : MonoBehaviour
     /// <returns></returns>
     /// SUBJECT TO CHANGE, Sementara kurang lebih seperti ini
     /// Iki gk efisien dadi haruse diubah, tapi haruse gk digae tiap request dipost dewe-dewe koyok ngene. Iki meloki ferry
-    private IEnumerator GameEventLogRequest(List<EventLog> eventLogs, int id_log)
+    private IEnumerator GameEventLogRequest(EventLog[] eventLogs, int id_log)
     {
+        Debug.Log("post event game event log.....");
         List<UnityWebRequest> wwws = new List<UnityWebRequest>();
-        foreach(EventLog log in eventLogs)
+        for(int i=0; i<eventLogs.Length; i++)
         {
             List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
             // formData.Add(new MultipartFormDataSection("id_game", APIManager.ID_GAME.ToString()));
             formData.Add(new MultipartFormDataSection("id_log", id_log.ToString()));
-            formData.Add(new MultipartFormDataSection("no_event", log.no_event.ToString()));
-            formData.Add(new MultipartFormDataSection("status_event", log.status.ToString()));
+            formData.Add(new MultipartFormDataSection("no_event", eventLogs[i].no_event.ToString()));
+            formData.Add(new MultipartFormDataSection("status_event", eventLogs[i].status.ToString()));
+
+            Debug.Log(id_log.ToString());
+            Debug.Log(eventLogs[i].no_event.ToString());
+            Debug.Log(eventLogs[i].status.ToString());
 
             UnityWebRequest www = UnityWebRequest.Post(APIManager.baseURL + "create_gameevent.php", formData);
 
             wwws.Add(www);
         }
-
+        Debug.Log("test");
         foreach(UnityWebRequest www in wwws)
         {
             yield return www.SendWebRequest();
+
+            if(www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                string json = www.downloadHandler.text; //get the response as JSON string
+                Debug.Log(json);
+            }
         }
 
         // If the request is successful, just quit the game if the player is trying to quit
@@ -307,6 +328,13 @@ public class Login : MonoBehaviour
         loginButton.SetActive(!isLogged);
         logoutButton.SetActive(isLogged);
     }
+
+    #region newGame
+    public void newGameButton()
+    {
+        APIManager.Instance.account.setEventNewAccount();
+    }
+    #endregion
 
     #region Utility
     private string Base64StringValidator(string base64String)

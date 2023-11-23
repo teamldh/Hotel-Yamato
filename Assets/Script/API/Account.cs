@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -48,8 +49,38 @@ public class Account
         {
             foreach(EventLog log in logs)
             {
+                // if(log.id_game == APIManager.ID_GAME)
+                // {
+                //     continue;
+                // }
                 eventLogDict[new GameEvent(log.id_game, log.no_event)] = log;
             }
+        }
+    }
+
+    public void setEventNewAccount()
+    {
+        eventLogs = new EventLog[4];
+        eventLogs[0] = new EventLog(1, 1, EventStatus.belum);
+        eventLogs[1] = new EventLog(1, 2, EventStatus.belum);
+        eventLogs[2] = new EventLog(1, 3, EventStatus.belum);
+        eventLogs[3] = new EventLog(1, 4, EventStatus.belum);
+        foreach(EventLog log in eventLogs)
+        {
+            //cek apakah eventlog sudah ada di dictionary
+            if(eventLogDict.ContainsKey(new GameEvent(log.id_game, log.no_event)))
+            {
+                continue;
+            }
+            eventLogDict.Add(new GameEvent(log.id_game, log.no_event), log);
+        }
+    }
+
+    public void updateEvent(GameEvent gameEvent, EventStatus status)
+    {
+        if(CheckEventLog(gameEvent, status))
+        {
+            eventLogDict[gameEvent].status = status;
         }
     }
 
@@ -63,6 +94,10 @@ public class Account
         {
             return false;
         }
+    }
+
+    public EventLog[] getValueFromDict(){
+        return eventLogDict.Values.ToArray();
     }
 }
 

@@ -41,7 +41,7 @@ public class DialogueManager : MonoBehaviour
     private DialogueVariables dialogueVariables;
     private InkExternalFunctions inkExternalFunctions;
 
-    public event Action OnDialogueStarted;
+    // public event Action OnDialogueStarted;
     public event Action OnDialogueLineDisplay;
     public event Action OnDialogueEnded;
 
