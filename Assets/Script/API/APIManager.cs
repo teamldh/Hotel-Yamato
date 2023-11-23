@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.Networking;
 using UnityEngine;
+using System;
 
 public class APIManager : MonoBehaviour 
 {

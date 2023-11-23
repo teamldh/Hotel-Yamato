@@ -24,17 +24,18 @@ public class Login : MonoBehaviour
     const string continueText = "\n(Press To Continue...)";
     private bool isLogged = false;
     private bool isQuitting = false;
-    [SerializeField]string loginTime;
+    [SerializeField] string loginTime;
 
     // private void Awake() 
     // {
     //     TryAutoLogin();
     // }
 
-    // private void Start() 
-    // {
-    //     checkedLogin();
-    // }
+    private void Start() 
+    {
+        checkedLogin();
+        //PlayerPrefs.GetString("LoginTime", "");
+    }
 
     // void OnApplicationQuit() 
     // {    
@@ -50,8 +51,9 @@ public class Login : MonoBehaviour
         if(APIManager.Instance.account != null)
         {
             isLogged = true;
+            nameAccount.text = "Halo " + APIManager.Instance.account.nama_player + "!";
             SwitchButton();
-            StartCoroutine(PostLoginRequest(AutoLoginRequest()));
+            //StartCoroutine(PostLoginRequest(AutoLoginRequest()));
         }
     }
 
@@ -193,6 +195,9 @@ public class Login : MonoBehaviour
 
             // Track login time for 'waktu_mulai' in game_log
             loginTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            // Save login time
+            PlayerPrefs.SetString("LoginTime", loginTime);
+            PlayerPrefs.Save();
 
             yield return new WaitForSeconds(1f);
         }
@@ -228,11 +233,12 @@ public class Login : MonoBehaviour
     /// <returns></returns>
     private IEnumerator PostGameLog()
     {
+        string savedLoginTime = PlayerPrefs.GetString("LoginTime", "");
         EventLog[] arrEvent = APIManager.Instance.account.getValueFromDict();
         List<IMultipartFormSection> formData = new List<IMultipartFormSection>();
         formData.Add(new MultipartFormDataSection("id_game", APIManager.ID_GAME.ToString()));
         formData.Add(new MultipartFormDataSection("id_player", APIManager.Instance.account.id_player));
-        formData.Add(new MultipartFormDataSection("waktu_mulai", loginTime));
+        formData.Add(new MultipartFormDataSection("waktu_mulai", savedLoginTime));
         formData.Add(new MultipartFormDataSection("waktu_entry", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")));
 
         UnityWebRequest www = UnityWebRequest.Post(APIManager.baseURL + "create_loggame.php", formData);
