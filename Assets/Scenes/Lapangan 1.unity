@@ -1767,18 +1767,6 @@ MonoBehaviour:
     id_log: 0
     no_event: 1
     status: 1
-  - id_game: 1
-    id_log: 0
-    no_event: 2
-    status: 0
-  - id_game: 1
-    id_log: 0
-    no_event: 3
-    status: 0
-  - id_game: 1
-    id_log: 0
-    no_event: 4
-    status: 0
 --- !u!4 &155193702
 Transform:
   m_ObjectHideFlags: 0

@@ -338,7 +338,10 @@ public class Login : MonoBehaviour
     #region newGame
     public void newGameButton()
     {
-        APIManager.Instance.account.setEventNewAccount();
+        if(isLogged)
+        {
+            APIManager.Instance.account.setEventNewAccount();
+        }
     }
     #endregion
 

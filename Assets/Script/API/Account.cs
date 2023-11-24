@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,25 +66,44 @@ public class Account
         eventLogs[1] = new EventLog(1, 2, EventStatus.belum);
         eventLogs[2] = new EventLog(1, 3, EventStatus.belum);
         eventLogs[3] = new EventLog(1, 4, EventStatus.belum);
+        
+        // Delete all event log with id_game = 1
+        List<GameEvent> eventToRemove = new List<GameEvent>();
+        foreach(EventLog log in eventLogDict.Values)
+        {
+            if(log.id_game == 1)
+            {
+                eventToRemove.Add(new GameEvent(log.id_game, log.no_event));
+            }
+        }
+        foreach(GameEvent gameEvent in eventToRemove)
+        {
+            eventLogDict.Remove(gameEvent);
+        }
+
+        // Add new event log
         foreach(EventLog log in eventLogs)
         {
-            //cek apakah eventlog sudah ada di dictionary
-            if(eventLogDict.ContainsKey(new GameEvent(log.id_game, log.no_event)))
-            {
-                continue;
-            }
             eventLogDict.Add(new GameEvent(log.id_game, log.no_event), log);
         }
+
+        Debug.Log("Event log dict count: " + eventLogDict.Count);
     }
 
     public void updateEvent(GameEvent gameEvent, EventStatus status)
     {
-        if(CheckEventLog(gameEvent, status))
+        if(eventLogDict.ContainsKey(gameEvent))
         {
             eventLogDict[gameEvent].status = status;
         }
     }
 
+    /// <summary>
+    /// Check if the event log is the same as the status specified
+    /// </summary>
+    /// <param name="gameEvent"></param>
+    /// <param name="status"></param>
+    /// <returns></returns>
     public bool CheckEventLog(GameEvent gameEvent, EventStatus status)
     {
         if(eventLogDict.ContainsKey(gameEvent))
@@ -96,8 +116,20 @@ public class Account
         }
     }
 
+    /// <summary>
+    /// Get the event log value from the dictionary with id_game = APIManager.ID_GAME
+    /// </summary>
+    /// <returns></returns>
     public EventLog[] getValueFromDict(){
-        return eventLogDict.Values.ToArray();
+        List<EventLog> arr = new List<EventLog>();
+        foreach(EventLog log in eventLogDict.Values)
+        {
+            if(log.id_game == APIManager.ID_GAME)
+            {
+                arr.Add(log);
+            }
+        }
+        return arr.ToArray();
     }
 }
 
