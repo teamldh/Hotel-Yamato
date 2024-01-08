@@ -22,6 +22,10 @@ public class handlerSound : MonoBehaviour
         sfxManager.instance.audioSource.volume = slider_SFX.value;
     }
 
+    public void stop_BGM(){
+        bgmManager.instance.audioSource.Stop();
+    }
+
     private void changeBGM(){
         switch(SceneManager.GetActiveScene().name){
             case "MainMenu":
@@ -39,7 +43,7 @@ public class handlerSound : MonoBehaviour
             case "IndorHotelYamatoPertempuran": 
                 bgmManager.instance.pertempuran();
                 break;
-            case "RoofHotelYamato2":
+            case "RoofHotelYamato_2":
                 bgmManager.instance.pertempuran();
                 break;
         }

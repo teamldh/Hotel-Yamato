@@ -171,6 +171,11 @@ MonoBehaviour:
   sceneIndex: 0
   pausePanel: {fileID: 887619714}
   settingPanel: {fileID: 1421997004}
+--- !u!1 &10140339 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8350729527115285859, guid: 30138d3468bd7f84fbaf483dd3c2e51a, type: 3}
+  m_PrefabInstance: {fileID: 746628193}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &20810858
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +457,7 @@ PrefabInstance:
     - target: {fileID: 7384727467634743175, guid: 5d2e1d9dd182c3e43ab07749e8661c81, type: 3}
       propertyPath: continueIcon
       value: 
-      objectReference: {fileID: 746628200}
+      objectReference: {fileID: 10140339}
     - target: {fileID: 7384727467634743175, guid: 5d2e1d9dd182c3e43ab07749e8661c81, type: 3}
       propertyPath: dialogueText
       value: 
@@ -5720,11 +5725,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &746628200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7664781716927052557, guid: 30138d3468bd7f84fbaf483dd3c2e51a, type: 3}
-  m_PrefabInstance: {fileID: 746628193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &746628201 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3913372651541800014, guid: 30138d3468bd7f84fbaf483dd3c2e51a, type: 3}
@@ -6286,6 +6286,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1725695781}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 636579801}
+        m_TargetAssemblyTypeName: PlayerControllerInputSystem, Assembly-CSharp
+        m_MethodName: SetEnableInputMovement
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 636579801}
+        m_TargetAssemblyTypeName: PlayerControllerInputSystem, Assembly-CSharp
+        m_MethodName: SetEnableInputMovement
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7004,7 +7028,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1507961434816720350, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: orthographic size
-      value: 7.265625
+      value: 5.546875
       objectReference: {fileID: 0}
     - target: {fileID: 1507961434816720350, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -7020,7 +7044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7942264595855047830, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0000005
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 7942264595855047830, guid: 2827b8b64cd87f44196fd1f37d818a12, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7266,7 +7290,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.03293, y: 4.03293, z: 4.03293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1734249056}
@@ -7312,7 +7336,7 @@ SpriteRenderer:
   m_SortingLayerID: 1964179755
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1056522175, guid: b7e8f5a86da9cda4c848d99fc93b74d7, type: 3}
+  m_Sprite: {fileID: -1964193393, guid: d7fece41313937d438b5a96a71671614, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7372,7 +7396,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.8}
+    oldSize: {x: 1.55, y: 2.76}
     newSize: {x: 0.4, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8281,7 +8305,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 395121981079925873, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.0000005
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 395121981079925873, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8318,6 +8342,22 @@ PrefabInstance:
     - target: {fileID: 395121981079925873, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831298803041448213, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
+      propertyPath: m_DeadZoneWidth
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831298803041448213, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
+      propertyPath: m_SoftZoneWidth
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831298803041448213, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
+      propertyPath: m_DeadZoneHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4831298803041448213, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
+      propertyPath: m_SoftZoneHeight
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6470387015724371700, guid: 2009b232fd6f5914b852ac1eef953caa, type: 3}
       propertyPath: m_Name
@@ -8396,7 +8436,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.03293, y: 4.03293, z: 4.03293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1987261711}
@@ -8442,7 +8482,7 @@ SpriteRenderer:
   m_SortingLayerID: 1964179755
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1056522175, guid: b7e8f5a86da9cda4c848d99fc93b74d7, type: 3}
+  m_Sprite: {fileID: -1964193393, guid: d7fece41313937d438b5a96a71671614, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8523,7 +8563,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.8}
+    oldSize: {x: 1.55, y: 2.76}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -8707,7 +8747,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1756642738}
   - component: {fileID: 1756642737}
-  - component: {fileID: 1756642739}
   m_Layer: 0
   m_Name: timeline
   m_TagString: Untagged
@@ -8775,48 +8814,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1756642739
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1756642736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: eb6bc61b7365e3a4092524885e0ec457, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 636579801}
-          m_TargetAssemblyTypeName: PlayerControllerInputSystem, Assembly-CSharp
-          m_MethodName: SetEnableInputMovement
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 636579801}
-          m_TargetAssemblyTypeName: PlayerControllerInputSystem, Assembly-CSharp
-          m_MethodName: SetEnableInputMovement
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1775102110
 GameObject:
   m_ObjectHideFlags: 0
@@ -9112,7 +9109,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.03293, y: 4.03293, z: 4.03293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1456340655}
@@ -9158,7 +9155,7 @@ SpriteRenderer:
   m_SortingLayerID: 1964179755
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1056522175, guid: b7e8f5a86da9cda4c848d99fc93b74d7, type: 3}
+  m_Sprite: {fileID: -1964193393, guid: d7fece41313937d438b5a96a71671614, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -9239,7 +9236,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.4, y: 0.8}
+    oldSize: {x: 1.55, y: 2.76}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -17211,7 +17208,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.03293, y: 4.03293, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6822806057603752056}
@@ -17327,7 +17324,7 @@ SpriteRenderer:
   m_SortingLayerID: -2100352105
   m_SortingLayer: 6
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1922000838, guid: 4cc772998a88b2c4d8665147bd8e5c4b, type: 3}
+  m_Sprite: {fileID: 171075590, guid: 7a0df982769086b4492b96a7c5394b1d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

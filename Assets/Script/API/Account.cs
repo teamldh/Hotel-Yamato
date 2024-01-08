@@ -74,17 +74,20 @@ public class Account
             if(log.id_game == 1)
             {
                 eventToRemove.Add(new GameEvent(log.id_game, log.no_event));
+                //Debug.Log("Remove event log: " + log.id_game + " " + log.no_event);
             }
         }
         foreach(GameEvent gameEvent in eventToRemove)
         {
             eventLogDict.Remove(gameEvent);
+            //Debug.Log("Remove event log: " + gameEvent.id_game + " " + gameEvent.no_event);
         }
 
         // Add new event log
         foreach(EventLog log in eventLogs)
         {
             eventLogDict.Add(new GameEvent(log.id_game, log.no_event), log);
+            //Debug.Log(eventLogDict[new GameEvent(log.id_game, log.no_event)].status);
         }
 
         Debug.Log("Event log dict count: " + eventLogDict.Count);
@@ -95,6 +98,7 @@ public class Account
         if(eventLogDict.ContainsKey(gameEvent))
         {
             eventLogDict[gameEvent].status = status;
+            //Debug.Log("Update event log: " + gameEvent.id_game + " " + gameEvent.no_event + " " + status);
         }
     }
 
@@ -124,9 +128,11 @@ public class Account
         List<EventLog> arr = new List<EventLog>();
         foreach(EventLog log in eventLogDict.Values)
         {
+
             if(log.id_game == APIManager.ID_GAME)
             {
                 arr.Add(log);
+                //Debug.Log(log.id_game + " " + log.no_event + " " + log.status);
             }
         }
         return arr.ToArray();

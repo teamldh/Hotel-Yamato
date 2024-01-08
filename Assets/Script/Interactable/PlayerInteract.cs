@@ -53,7 +53,7 @@ public class PlayerInteract : MonoBehaviour
         if(closestObject != null){
             if(indicatorObject == null || closestObject != objectInteract && hintPrefab != null){
                 HideHint();
-                float yOffset = (closestObject.GetComponent<Collider2D>().bounds.size.y / 2f) + 1f;
+                float yOffset = (closestObject.GetComponent<Collider2D>().bounds.size.y / 2f) + 1.5f;
                 indicatorObject = Instantiate(hintPrefab, closestObject.transform.position + Vector3.up * yOffset, Quaternion.identity);
             }
         }

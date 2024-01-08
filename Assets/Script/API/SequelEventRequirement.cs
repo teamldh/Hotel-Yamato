@@ -30,13 +30,23 @@ public class SequelEventRequirement : MonoBehaviour
     /// </summary>
     public void ExecuteRequirement()
     {
-        if(IsRequirementFulfilled())
+        if(APIManager.Instance.account != null)
         {
-            onRequirementFulfilled.Invoke();
+            if(IsRequirementFulfilled())
+            {
+                onRequirementFulfilled.Invoke();
+                Debug.Log("Requirement fulfilled");
+            }
+            else
+            {
+                onRequirementNotFulfilled.Invoke();
+                Debug.Log("Requirement not fulfilled");
+            }
         }
         else
         {
             onRequirementNotFulfilled.Invoke();
+            Debug.Log("there is no account");
         }
     }
 

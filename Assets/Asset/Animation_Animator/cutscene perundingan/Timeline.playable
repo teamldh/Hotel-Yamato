@@ -138,7 +138,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 10.833333333333334
-    m_DisplayName: idle pasukan
+    m_DisplayName: pasukan tentara belakang SIDE IDLE
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
@@ -427,7 +427,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 10.833333333333334
-    m_DisplayName: ploegman idle left
+    m_DisplayName: ploegman SIDE IDLE LEFT
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
@@ -1269,7 +1269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 1bc594f7df57b8a429699a618ae5d541, type: 2}
+  m_Clip: {fileID: 7400000, guid: 891f9e5e5447ad14ba17cbdbc6d46956, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 1bc594f7df57b8a429699a618ae5d541, type: 2}
+  m_Clip: {fileID: 7400000, guid: 891f9e5e5447ad14ba17cbdbc6d46956, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -1313,7 +1313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: b3ffae0e31ace564db84ac24f7cdc2fb, type: 2}
+  m_Clip: {fileID: 7400000, guid: ee4f7938f6706d44da45342c6cb41723, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -2022,7 +2022,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 7
-    m_DisplayName: walk right NPC
+    m_DisplayName: sudirman SIDE WALKING RIGHT
   - m_Version: 1
     m_Start: 13
     m_ClipIn: 0
@@ -2073,7 +2073,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0
-    m_DisplayName: idle right NPC
+    m_DisplayName: sudirman SIDE IDLE RIGHT
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
@@ -2183,7 +2183,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 7
-    m_DisplayName: sidik walk right
+    m_DisplayName: arek surabaya pria WALKING RIGHT
   - m_Version: 1
     m_Start: 13
     m_ClipIn: 0
@@ -2252,7 +2252,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 0
-    m_DisplayName: sidik idle right
+    m_DisplayName: arek surabaya pria IDLE RIGHT
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
@@ -2394,7 +2394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 4a8971a4660bbc245be086a51900841d, type: 2}
+  m_Clip: {fileID: 7400000, guid: 305512a62aa1dd64e90b64c1b3951367, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -4008,7 +4008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 16e3f651559d98b4aa08e4deebeff25c, type: 2}
+  m_Clip: {fileID: 7400000, guid: bf84bb381d339e340abc14a40b87fc58, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -4107,7 +4107,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: Infinity
     m_PreExtrapolationTime: 10.833333333333334
-    m_DisplayName: idle pasukan
+    m_DisplayName: pasukan tentara belakang SIDE IDLE
   m_Markers:
     m_Objects: []
   m_InfiniteClipPreExtrapolation: 0
@@ -4337,7 +4337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 862923adc85ab76439bbe551bd882eb6, type: 2}
+  m_Clip: {fileID: 7400000, guid: 20a4eb837229c2a42b741cd27b44873b, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -4670,7 +4670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: 30a25c7f18991f84fba54e29ce5e568d, type: 2}
+  m_Clip: {fileID: 7400000, guid: c6820615812cd61409f918f7a6a77d1a, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1

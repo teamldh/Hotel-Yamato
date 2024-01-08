@@ -10,24 +10,16 @@ public class Eventlogged : MonoBehaviour
 
     void Start(){
         PushEventLog();
-        // EventLog[] arr = new EventLog[APIManager.Instance.account.eventLogDict.Count];
-        // Debug.Log(arr);
-        getValueDict();
     }
 
     public void PushEventLog()
     {
-        foreach(EventLog log in eventLogs)
+        if(APIManager.Instance.account != null)
         {
-            APIManager.Instance.account.updateEvent(new GameEvent(log.id_game, log.no_event), log.status);
+            foreach(EventLog log in eventLogs)
+            {
+                APIManager.Instance.account.updateEvent(new GameEvent(log.id_game, log.no_event), log.status);
+            }
         }
-    }
-
-    public EventLog[] getValueDict(){
-        EventLog[] arr = new EventLog[APIManager.Instance.account.eventLogDict.Count];
-        //APIManager.Instance.account.eventLogDict.Values.CopyTo(arr, 0);
-        arr = APIManager.Instance.account.eventLogDict.Values.ToArray();
-        Debug.Log(arr);
-        return arr;
     }
 }

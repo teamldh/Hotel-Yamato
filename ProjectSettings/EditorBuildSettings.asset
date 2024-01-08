@@ -38,5 +38,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RoofHotelYamato_2.unity
     guid: ce7b9ed14b6adc34db6cc60430570544
+  - enabled: 1
+    path: Assets/Scenes/debriefing.unity
+    guid: 427c125fa8d121747a383c2dde0dfea0
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 230741ee4d2544440b5f461acf35408b, type: 2}

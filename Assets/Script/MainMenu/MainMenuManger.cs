@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Threading;
 
 public class MainMenuManger : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class MainMenuManger : MonoBehaviour
     void Start()
     {
         Panelmainmenu();
+        bgmManager.instance.audioSource.Play();
 
         GameData data = SaveManager.instance.LoadSceneData();
         if (data != null)
@@ -38,11 +40,17 @@ public class MainMenuManger : MonoBehaviour
     public void playGame(){
         sfxManager.instance.sfx_2();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        TimerManager.instance.resetTimer();
+        TimerManager.instance.startimer();
+        QuizScoreManager.Instance.ResetScore();
     }
 
     public void continueGame(){
         sfxManager.instance.sfx_3();
         LoadSceneData();
+        TimerManager.instance.resetTimer();
+        TimerManager.instance.startimer();
+        QuizScoreManager.Instance.ResetScore();
     }
 
     private void LoadSceneData()

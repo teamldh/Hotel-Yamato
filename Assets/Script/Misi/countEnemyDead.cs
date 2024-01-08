@@ -37,9 +37,9 @@ public class countEnemyDead : MonoBehaviour
                 child.GetComponent<enemy>().hentikanTembakan();
             }
         }
-        Debug.Log(objectParent.name + " " + objectParent.transform.childCount);
+        //Debug.Log(objectParent.name + " " + objectParent.transform.childCount);
         if(objectParent.transform.childCount == 0){
-            Debug.Log("Misi Selesai");
+            //Debug.Log("Misi Selesai");
             for(int i = 0; i < NPC.Length; i++){
                 NPC[i].GetComponent<NPCshoot>().hentikanTembakan();
             }
